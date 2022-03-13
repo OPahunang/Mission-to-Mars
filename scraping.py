@@ -42,7 +42,7 @@ def mars_news(browser):
     # Add try/except for error handling
     try:
         slide_elem = news_soup.select_one('div.list_text')
-        # slide_elem.find('div', class_='content_title')
+        slide_elem.find('div', class_='content_title')
 
         # Use the parent element to find the first a tag and save it as `news_title`
         news_title = slide_elem.find('div', class_='content_title').get_text()
@@ -134,6 +134,9 @@ def mars_hemispheres(browser):
             'img_url': f"{url}{hemi_url}",
             'title': hemi_title })
         browser.back()
+
+    # return images and titles
+    return hemisphere_image_urls
 
 if __name__ == "__main__":
     # If running as script, print scraped data
