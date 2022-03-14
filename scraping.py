@@ -75,33 +75,30 @@ def featured_image(browser):
     try:
         # find the relative image url
         img_url_rel = img_soup.find('img', class_='fancybox-image').get('src')
-        # img_url_rel
-
-        # Use the base url to create an absolute url
-        img_url = f'https://spaceimages-mars.com/{img_url_rel}'
-        # img_url
     
     except AttributeError:
         return None
+
+    # Use the base url to create an absolute url
+    img_url = f'https://spaceimages-mars.com/{img_url_rel}'
 
     return img_url
 
 # ## Mars Facts
 def mars_facts():
     # Add try/except for error handling
-    try:
-        # use 'read_html" to scrape the facts table into a dataframe
-        df = pd.read_html('https://galaxyfacts-mars.com')[0]
-        
-    except BaseException:
-        return None
+    # try:
+    df = pd.read_html('https://galaxyfacts-mars.com')[0]
+
+    # except BaseException:
+    #    return None
 
     # Assign columns and set index of dataframe
     df.columns=['Description', 'Mars', 'Earth']
     df.set_index('Description', inplace=True)
-    
+
     # Convert dataframe into HTML format, add bootstrap
-    return df.to_html()
+    return df.to_html(classes='table table-striped')
 
 # ## Mars Hemishere
 def mars_hemispheres(browser):
