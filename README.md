@@ -2,7 +2,9 @@
 
 ## Overview:
 
-Mission to Mars is an exploration of information about Mars that will gather data from different websites to conveniently show in one website location. With the use of web scraping and gathering latest data from the web and storing data to database is the main goal of the project.    
+Mission to Mars is space exploration of information about Mars,  the goal is to gather data from different websites and conveniently show in one website location. 
+
+With the use of web scraping and gathering latest data from the web and storing data to Mongo database is the main goal of the project.    
 
 ## Results:
 
